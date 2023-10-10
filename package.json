@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {},
   "keywords": [],
-  "author": "",
+  "author": "VDV",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.38.1",
