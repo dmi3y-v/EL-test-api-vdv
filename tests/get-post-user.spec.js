@@ -9,6 +9,9 @@ const deleteUrl = config.baseUrl + "/" + config.validUser.username;
 
 const getErrorMessage = { code: 1, type: "error", message: "User not found" };
 
+const successCode = 200;
+const errorCode = 404;
+
 test.describe("GET/POST user", () => {
   test("GET undefined user", async ({ request }) => {
     const response = await request.fetch(getUrl, {
@@ -16,7 +19,7 @@ test.describe("GET/POST user", () => {
     });
 
     await expect(response).not.toBeOK();
-    expect(response.status()).toEqual(404);
+    expect(response.status()).toEqual(errorCode);
 
     const responseToJSON = await response.json();
     // expect(responseToJSON).toEqual(getErrorMessage);
@@ -34,7 +37,7 @@ test.describe("GET/POST user", () => {
     });
 
     await expect(response).toBeOK();
-    expect(response.status()).toEqual(200);
+    expect(response.status()).toEqual(successCode);
 
     const responseToJSON = await response.json();
     expect(responseToJSON.message).toEqual(config.validUser.id.toString());
@@ -46,7 +49,7 @@ test.describe("GET/POST user", () => {
     });
 
     await expect(response).toBeOK();
-    expect(response.status()).toEqual(200);
+    expect(response.status()).toEqual(successCode);
 
     const responseToJSON = await response.json();
     expect(responseToJSON).toEqual(config.validUser);
@@ -58,7 +61,7 @@ test.describe("GET/POST user", () => {
     });
 
     await expect(response).toBeOK();
-    expect(response.status()).toEqual(200);
+    expect(response.status()).toEqual(successCode);
 
     const responseToJSON = await response.json();
     expect(responseToJSON.message).toEqual(config.validUser.username);
