@@ -13,6 +13,8 @@
 1. Выполнить в корне проекта `npx playwright show-report`
 2. Перейти в создавшуюся папку `playwright-report` и открыть файл `index.html`
 
+:white_check_mark: Примеры полученных отчетов, можно посмотреть [здесь](https://github.com/dmi3y-v/EL-test-api-vdv/issues/1#issue-1951437399).
+
 ***
 
 #### Что сделано:
